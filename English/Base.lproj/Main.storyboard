@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8R5-2p-NqR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--English Words-->
+        <scene sceneID="alT-AH-vgV">
+            <objects>
+                <tableViewController id="6wz-Bg-MgE" customClass="WordTableViewController" customModule="English" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dE4-TI-vaC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="KkT-NY-RI4" style="IBUITableViewCellStyleDefault" id="bkf-BG-Vx9">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bkf-BG-Vx9" id="v3x-Js-Hhs">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KkT-NY-RI4">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <gestureRecognizers/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6wz-Bg-MgE" id="Twy-AS-pgr"/>
+                            <outlet property="delegate" destination="6wz-Bg-MgE" id="Y8W-2x-9uy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="English Words" id="IBQ-1S-NNJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UsU-4O-F0g">
+                            <connections>
+                                <segue destination="zDf-He-TiA" kind="show" id="Bx7-cr-ctj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6EZ-aO-tca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="355" y="154"/>
+        </scene>
+        <!--Add Word View Controller-->
+        <scene sceneID="gt6-mz-y4p">
+            <objects>
+                <viewController id="zDf-He-TiA" customClass="AddWordViewController" customModule="English" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DoH-Gs-Xsn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="単語を追加する" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgS-Ds-A0D">
+                                <rect key="frame" x="107.5" y="243" width="199" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="単語を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rOs-S7-hRS">
+                                <rect key="frame" x="114.5" y="337" width="185.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="tex:" destination="zDf-He-TiA" eventType="editingDidEndOnExit" id="SMB-ou-3zg"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="意味を入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HgG-YW-cbi">
+                                <rect key="frame" x="114.5" y="431" width="185.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="sectex:" destination="zDf-He-TiA" eventType="editingDidEndOnExit" id="C5z-f3-RKX"/>
+                                    <action selector="sectex:" destination="zDf-He-TiA" eventType="editingChanged" id="YzQ-Ki-cR8"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7lt-Qj-yVZ">
+                                <rect key="frame" x="176" y="550" width="62" height="30"/>
+                                <state key="normal" title="追加する"/>
+                                <connections>
+                                    <action selector="setButton:" destination="zDf-He-TiA" eventType="touchUpInside" id="AcG-2C-Hmf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DgS-Ds-A0D" firstAttribute="centerX" secondItem="DoH-Gs-Xsn" secondAttribute="centerX" id="4V0-ru-1AS"/>
+                            <constraint firstItem="rOs-S7-hRS" firstAttribute="top" secondItem="DgS-Ds-A0D" secondAttribute="bottom" constant="60" id="7j2-fh-T6R"/>
+                            <constraint firstItem="7lt-Qj-yVZ" firstAttribute="centerX" secondItem="DoH-Gs-Xsn" secondAttribute="centerX" id="E7Q-vc-cRn"/>
+                            <constraint firstItem="HgG-YW-cbi" firstAttribute="top" secondItem="rOs-S7-hRS" secondAttribute="bottom" constant="60" id="MGe-O2-bPr"/>
+                            <constraint firstItem="rOs-S7-hRS" firstAttribute="centerX" secondItem="DoH-Gs-Xsn" secondAttribute="centerX" id="YNj-n6-PS7"/>
+                            <constraint firstItem="7lt-Qj-yVZ" firstAttribute="top" secondItem="HgG-YW-cbi" secondAttribute="bottom" constant="85" id="efC-PE-vWh"/>
+                            <constraint firstItem="HgG-YW-cbi" firstAttribute="centerX" secondItem="DoH-Gs-Xsn" secondAttribute="centerX" id="wzO-T3-Odo"/>
+                            <constraint firstItem="DgS-Ds-A0D" firstAttribute="top" secondItem="69m-cz-ZLm" secondAttribute="top" constant="155" id="y9J-gn-AGE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="69m-cz-ZLm"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8gL-r8-qew"/>
+                    <connections>
+                        <outlet property="addButton" destination="7lt-Qj-yVZ" id="XAS-hj-EgX"/>
+                        <outlet property="meanTextField" destination="HgG-YW-cbi" id="Hol-qU-TRx"/>
+                        <outlet property="wordTextField" destination="rOs-S7-hRS" id="SsL-AQ-eXd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jyk-nP-zxj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1126" y="153"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DT3-4x-HSU">
+            <objects>
+                <navigationController id="8R5-2p-NqR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oAM-wW-6Oe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6wz-Bg-MgE" kind="relationship" relationship="rootViewController" id="D3r-Kq-SRs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XPn-PB-lZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-564" y="154"/>
+        </scene>
+    </scenes>
+</document>
